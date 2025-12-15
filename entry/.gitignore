@@ -1,0 +1,11 @@
+/node_modules
+/oh_modules
+/.preview
+/build
+/.cxx
+/.test
+/.idea
+*.iml
+/.gradle
+Thumbs.db
+.DS_Store

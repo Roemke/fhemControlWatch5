@@ -1,0 +1,56 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\roemke\\.ohos\\config\\default_FhemControl_9Q6BOSQv2OVkawAWBa58jPq37C_lxTIhhSD1T8NvMH8=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A21B6062828835113A1CBA004D3A7BAAB5AC3819E2D117990A156C0EE7D35305C440BBD5909E0",
+          "profile": "C:\\Users\\roemke\\.ohos\\config\\default_FhemControl_9Q6BOSQv2OVkawAWBa58jPq37C_lxTIhhSD1T8NvMH8=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\roemke\\.ohos\\config\\default_FhemControl_9Q6BOSQv2OVkawAWBa58jPq37C_lxTIhhSD1T8NvMH8=.p12",
+          "storePassword": "0000001A27861A1B0C001CE45F0F258137FD824AEF0203342D7CA83A99DE0E8A923F43EEAF3521193153"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.0.1(21)",
+        "compatibleSdkVersion": "5.1.1(19)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
