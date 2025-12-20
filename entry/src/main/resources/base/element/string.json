@@ -6,11 +6,11 @@
     },
     {
       "name": "EntryAbility_desc",
-      "value": "description"
+      "value": "Control FHEM"
     },
     {
       "name": "EntryAbility_label",
-      "value": "Control"
+      "value": "FH Control"
     }
   ]
 }
