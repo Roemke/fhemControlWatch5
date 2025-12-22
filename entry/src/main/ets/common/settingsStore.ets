@@ -5,6 +5,9 @@ interface SettingsData {
   listUrl?: string;
 }
 
+/*
+ Hmm, hier arbeite ich mit fileio fuer die Daten, prefs ging nicht, warum nicht, im Projekt einkauf scheint es zu gehen.
+ */
 // 2. Pfad-Konstante
 const SETTINGS_PATH: string = '/data/storage/el2/base/files/settings.json';
 const DEFAULT_LIST_URL: string = "http://192.168.0.203:8084/fhem?cmd={mdjson()}&XHR=1";
