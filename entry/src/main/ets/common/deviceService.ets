@@ -30,8 +30,12 @@ export async function fetchDevices(): Promise<DeviceItem[]> {
     throw new Error('Invalid list');
   }
   const normalized: DeviceItem[] = parsed.map((d: DeviceItem) => {
+    let alias : string = "";
+    alias = (d.group == "Media") ?  '📡' :
+            (d.group == "Licht") ? '💡'  :
+              (d.group == "Combined") ?  '⚠️' : ' ';
     const item: DeviceItem = {
-      alias: d.alias,
+      alias: alias + d.alias,
       group: d.group,
       state: d.state,
       url: normalizeUrl(d.url),

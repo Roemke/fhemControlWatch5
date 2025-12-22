@@ -17,7 +17,7 @@ struct ControlPage {
   @State currentGroup: string = 'not set';
   @State actionInProgress: string | null = null;
   @State private errorItemAlias: string | null = null;
-
+  private icon : string = "";
 
 
   // ---------- Lifecycle ----------
@@ -45,8 +45,9 @@ struct ControlPage {
     }
   }
 
-  // ---------- UI kommt später ----------
+  //
   build() {
+    Scroll(){
     Column() {
       if (this.loading) {
         this.renderCenteredMessage("Lade …");
@@ -54,22 +55,20 @@ struct ControlPage {
         this.renderCenteredError();//greift auf debug-Text zu
       } else {
         // Liste anzeigen
-        this.setHeader();
+        //this.setHeader();
         this.renderDeviceList();
       }
-    }
-    .width('100%')
-    .height('100%')
+    }}
   }
 
   @Builder
-  setHeader() : void {
+  setHeader() : void { //ist raus
     Text(this.currentGroup)
       .fontSize(12)
       .fontColor('#AAAAAA')
       .padding({ top: 8, bottom: 8 })
       .textAlign(TextAlign.Center)
-      .width('100%')
+      .width('10%')
   }
   @Builder
   renderDeviceList(): void {
@@ -79,11 +78,10 @@ struct ControlPage {
           this.renderDevice(item);
         }
       }, (item: DeviceItem) => `${item.alias}_${item.state}_${item.group}`)//das ist ein key, er muss sich ändern
-    }.layoutWeight(1)
-    .scrollBar(BarState.Auto)
-    .onScrollIndex((start: number, end: number, center: number) => {
-      this.onListScroll(start,end,center);
-    })
+    }
+    //.onScrollIndex((start: number, end: number, center: number) => {
+    //  this.onListScroll(start,end,center);
+    //})
 
 
   }
@@ -136,8 +134,6 @@ struct ControlPage {
   }
   @Builder renderDevice(item: DeviceItem):void {
     Column({ space: 8 }) {
-
-      // Alias
       Text(item.alias)
         .fontSize(18)
         .fontWeight(FontWeight.Medium)
